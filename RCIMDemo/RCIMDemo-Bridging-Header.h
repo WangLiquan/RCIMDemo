@@ -10,7 +10,6 @@
 #define Group_Bridging_Header_h
 
 #import <RongIMKit/RongIMKit.h>
-
 #import "UIViewController+Swizzling_h.h"
 
 #endif /* Group_Bridging_Header_h */

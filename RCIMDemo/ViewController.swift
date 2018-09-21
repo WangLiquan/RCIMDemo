@@ -10,6 +10,7 @@ import UIKit
 ///示例数据,正常应该从后台获取.
 let personArray = ["jame","ethan","wang","bridge","gai"]
 
+///这里使用的是自己实现的通讯录列表,根据需求可以选择使用融云自带的通讯列表页面,新建自己的viewController继承自RCConversationListViewController
 class ViewController: UIViewController {
 
     let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
