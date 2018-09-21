@@ -74,6 +74,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 //MARK: - 融云获取信息delegate
 extension AppDelegate: RCIMReceiveMessageDelegate {
+
+    /// 收到信息时的回调方法
+    ///
+    /// - Parameters:
+    ///   - message: 信息主体
+    ///   - left: 剩余数量,当一次有大量的信息传入时,融云选择重复调用这个方法的形式,left就是剩余未接收的信息数量
     func onRCIMReceive(_ message: RCMessage!, left: Int32) {
         switch message.conversationType {
             ///群组聊天数据
