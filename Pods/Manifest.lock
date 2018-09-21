@@ -1,0 +1,18 @@
+PODS:
+  - RongCloudIM/IMKit (2.9.6):
+    - RongCloudIM/IMLib
+  - RongCloudIM/IMLib (2.9.6)
+
+DEPENDENCIES:
+  - RongCloudIM/IMKit
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - RongCloudIM
+
+SPEC CHECKSUMS:
+  RongCloudIM: 8f00ae3db8f8b971ad923026cea48854920bf8ee
+
+PODFILE CHECKSUM: d7e9d5cc85def7f9072a99d6da93e601ac9c3062
+
+COCOAPODS: 1.5.0
