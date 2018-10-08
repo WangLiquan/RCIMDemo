@@ -32,6 +32,7 @@ class ViewController: UIViewController {
         tableView.showsVerticalScrollIndicator=false;
         tableView.register(EWChatListTableViewCell.self, forCellReuseIdentifier: EWChatListTableViewCell.identifier)
 
+        ///添加通知,获取消息时刷新TableView上的badge
         NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name:   Notification.Name(rawValue: "onRCIMReceive"), object: nil)
     }
     /// 融云通知获取信息时调用刷新群组信息数
@@ -60,7 +61,6 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
         /** 这里的badge应该是从userDefault中获取.我在融云控制台注册了userID[0,1,2,3,4].并使用控制台给登录的userID"123456"发送消息.
             正常接入时userID也是后台传给融云的,可以通过后台获取.
         */
-
         let dic = getMessageDic(PERSONMESSAGEKEY)
         let num = dic["\(indexPath.row)"]
         cell.setData(name: personArray[indexPath.row], badge: num ?? 0)
