@@ -31,6 +31,17 @@ class ViewController: UIViewController {
         tableView.showsHorizontalScrollIndicator=true;
         tableView.showsVerticalScrollIndicator=false;
         tableView.register(EWChatListTableViewCell.self, forCellReuseIdentifier: EWChatListTableViewCell.identifier)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name:   Notification.Name(rawValue: "onRCIMReceive"), object: nil)
+    }
+    /// 融云通知获取信息时调用刷新群组信息数
+    @objc private func reloadData(){
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: "onRCIMReceive"), object: nil)
     }
 
 }
@@ -46,19 +57,24 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: EWChatListTableViewCell.identifier) as? EWChatListTableViewCell else {
             return EWChatListTableViewCell()
         }
-        /** 这里的badge应该是从userDefault中获取.由于我没有实际注册app.所以获取不到userID.
-            userID也是后台传给融云的,可以通过后台获取.
-              let dic = getMessageDic(PERSONMESSAGEKEY)
-              let num = dic[userID]
-              guard num != nil else { return }
+        /** 这里的badge应该是从userDefault中获取.我在融云控制台注册了userID[0,1,2,3,4].并使用控制台给登录的userID"123456"发送消息.
+            正常接入时userID也是后台传给融云的,可以通过后台获取.
         */
-        cell.setData(name: personArray[indexPath.row], badge: "5")
+
+        let dic = getMessageDic(PERSONMESSAGEKEY)
+        let num = dic["\(indexPath.row)"]
+        cell.setData(name: personArray[indexPath.row], badge: num ?? 0)
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
         /// targetID就是目标用户的targetID,是后台传给融云的,我们也是从后台获取
-        let chat = EWPersonChatViewController(conversationType: .ConversationType_PRIVATE, targetId: "123456")
+        let chat = EWPersonChatViewController(conversationType: .ConversationType_PRIVATE, targetId: "\(indexPath.row)")
         self.navigationController?.pushViewController(chat!, animated: true)
+        var dic = getMessageDic(PERSONMESSAGEKEY)
+        dic.removeValue(forKey: "\(indexPath.row)")
+        UserDefaults.standard.set(dic, forKey: PERSONMESSAGEKEY)
+        self.reloadData()
     }
 }
 

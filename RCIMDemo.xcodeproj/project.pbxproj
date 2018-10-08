@@ -14,11 +14,11 @@
 		79D7A7452154826A0002C7E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79D7A7432154826A0002C7E6 /* LaunchScreen.storyboard */; };
 		79D7A7502154826A0002C7E6 /* RCIMDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D7A74F2154826A0002C7E6 /* RCIMDemoTests.swift */; };
 		79D7A75B2154826A0002C7E6 /* RCIMDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D7A75A2154826A0002C7E6 /* RCIMDemoUITests.swift */; };
-		79D7A769215483C30002C7E6 /* CRRCIMDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D7A768215483C30002C7E6 /* CRRCIMDelegate.swift */; };
+		79D7A769215483C30002C7E6 /* EWRCIMDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D7A768215483C30002C7E6 /* EWRCIMDelegate.swift */; };
 		79D7A76D2154845B0002C7E6 /* UIViewController+Swizzling_h.m in Sources */ = {isa = PBXBuildFile; fileRef = 79D7A76C2154845B0002C7E6 /* UIViewController+Swizzling_h.m */; };
 		79D7A76F21548B430002C7E6 /* EWChatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D7A76E21548B430002C7E6 /* EWChatListTableViewCell.swift */; };
 		79D7A771215490190002C7E6 /* EWPersonChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D7A770215490190002C7E6 /* EWPersonChatViewController.swift */; };
-		79D7A773215495030002C7E6 /* CRUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D7A772215495030002C7E6 /* CRUserDefaults.swift */; };
+		79D7A773215495030002C7E6 /* EWUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D7A772215495030002C7E6 /* EWUserDefaults.swift */; };
 		9885FBD3DEBB09F5484D2F3B /* Pods_RCIMDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65BC0486E576F4A5BB6AEBA9 /* Pods_RCIMDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,13 +55,13 @@
 		79D7A7562154826A0002C7E6 /* RCIMDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RCIMDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79D7A75A2154826A0002C7E6 /* RCIMDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCIMDemoUITests.swift; sourceTree = "<group>"; };
 		79D7A75C2154826A0002C7E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		79D7A768215483C30002C7E6 /* CRRCIMDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRRCIMDelegate.swift; sourceTree = "<group>"; };
+		79D7A768215483C30002C7E6 /* EWRCIMDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWRCIMDelegate.swift; sourceTree = "<group>"; };
 		79D7A76A215484350002C7E6 /* RCIMDemo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RCIMDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		79D7A76B2154845B0002C7E6 /* UIViewController+Swizzling_h.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Swizzling_h.h"; sourceTree = "<group>"; };
 		79D7A76C2154845B0002C7E6 /* UIViewController+Swizzling_h.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Swizzling_h.m"; sourceTree = "<group>"; };
 		79D7A76E21548B430002C7E6 /* EWChatListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EWChatListTableViewCell.swift; sourceTree = "<group>"; };
 		79D7A770215490190002C7E6 /* EWPersonChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EWPersonChatViewController.swift; sourceTree = "<group>"; };
-		79D7A772215495030002C7E6 /* CRUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRUserDefaults.swift; sourceTree = "<group>"; };
+		79D7A772215495030002C7E6 /* EWUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWUserDefaults.swift; sourceTree = "<group>"; };
 		7DA8376EC8351319AA2421B4 /* Pods-RCIMDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCIMDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RCIMDemo/Pods-RCIMDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,10 +124,10 @@
 		79D7A739215482680002C7E6 /* RCIMDemo */ = {
 			isa = PBXGroup;
 			children = (
-				79D7A772215495030002C7E6 /* CRUserDefaults.swift */,
+				79D7A772215495030002C7E6 /* EWUserDefaults.swift */,
 				79D7A76B2154845B0002C7E6 /* UIViewController+Swizzling_h.h */,
 				79D7A76C2154845B0002C7E6 /* UIViewController+Swizzling_h.m */,
-				79D7A768215483C30002C7E6 /* CRRCIMDelegate.swift */,
+				79D7A768215483C30002C7E6 /* EWRCIMDelegate.swift */,
 				79D7A73A215482680002C7E6 /* AppDelegate.swift */,
 				79D7A73C215482680002C7E6 /* ViewController.swift */,
 				79D7A76E21548B430002C7E6 /* EWChatListTableViewCell.swift */,
@@ -353,10 +353,10 @@
 				79D7A73D215482680002C7E6 /* ViewController.swift in Sources */,
 				79D7A76D2154845B0002C7E6 /* UIViewController+Swizzling_h.m in Sources */,
 				79D7A771215490190002C7E6 /* EWPersonChatViewController.swift in Sources */,
-				79D7A769215483C30002C7E6 /* CRRCIMDelegate.swift in Sources */,
+				79D7A769215483C30002C7E6 /* EWRCIMDelegate.swift in Sources */,
 				79D7A76F21548B430002C7E6 /* EWChatListTableViewCell.swift in Sources */,
 				79D7A73B215482680002C7E6 /* AppDelegate.swift in Sources */,
-				79D7A773215495030002C7E6 /* CRUserDefaults.swift in Sources */,
+				79D7A773215495030002C7E6 /* EWUserDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

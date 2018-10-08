@@ -13,10 +13,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         ///在官网上申请的App Key. 同时获取的App Secret我们并不需要,是后台需要的.
-        RCIM.shared().initWithAppKey("app key")
+        RCIM.shared().initWithAppKey("y745wfm8yjzbv")
         ///是否将用户信息和群组信息在本地持久化存储
         RCIM.shared().enablePersistentUserInfoCache = false
         ///是否在发送的所有消息中携带当前登录的用户信息
@@ -29,7 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         RCIM.shared().groupUserInfoDataSource = RCIMDataSource
 
         ///融云并不管理用户信息,不管是登录账号还是与之聊天的人的信息,所以我们需要在连接融云服务器时就将登录账号的昵称与头像设定好.这样才能在会话页显示正确的数据
-        RCIM.shared().connect(withToken: "这个登录的账号的融云token,从后台获取", success: { (userId) in
+        /// token也是从后台获取,理论上顺序是登录时获取后台传来的token,再使用这个token链接融云服务.
+        RCIM.shared().connect(withToken: "dQBWciyYegIh7UpkkirIqP/V9gk1Pf9ZryuCvogQH2pvFx4QxzGsb+jL8Kx0zVRqv//9jeTWRkR5S5eole51Dw==", success: { (userId) in
             ///这两个都是从后台获取
             let username = "登录账号的昵称"
             let iconurl = "登录账号的头像路径"

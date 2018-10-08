@@ -7,7 +7,7 @@
 //
 
 import UIKit
-///因为我们的appkey,targetID都是错误的,所以无法聊天,正常app流程下不会出现这种问题.
+
 class EWPersonChatViewController: RCConversationViewController {
 
     override func viewDidLoad() {
@@ -15,12 +15,16 @@ class EWPersonChatViewController: RCConversationViewController {
 
         self.title = "聊天页"
 
-        ///如果需要修改页面样式,可以修改self.conversationMessageCollectionView属性
+//        ///如果需要修改页面样式,可以修改self.conversationMessageCollectionView属性
         self.conversationMessageCollectionView.backgroundColor = UIColor.brown
         
         addPhoneButton()
-
-        // Do any additional setup after loading the view.
+    }
+    /// 当退出聊天页时,将这次聊天badge计数删除.
+    override func viewWillDisappear(_ animated: Bool) {
+        var dic = getMessageDic(PERSONMESSAGEKEY)
+        dic[self.targetId] = 0
+        UserDefaults.standard.setValue(dic, forKey: PERSONMESSAGEKEY)
     }
     /// 添加聊天页加号按钮中的功能
     func addPhoneButton(){

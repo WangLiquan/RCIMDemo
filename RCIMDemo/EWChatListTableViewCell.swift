@@ -40,9 +40,14 @@ class EWChatListTableViewCell: UITableViewCell {
         self.addSubview(label)
         self.addSubview(badgeValueLabel)
     }
-    public func setData(name: String, badge: String){
+    public func setData(name: String, badge: Int){
         self.label.text = name
-        self.badgeValueLabel.text = badge
+        if badge == 0 {
+            badgeValueLabel.isHidden = true
+        }else {
+            self.badgeValueLabel.text = "\(badge)"
+            self.badgeValueLabel.isHidden = false
+        }
     }
 
 }
