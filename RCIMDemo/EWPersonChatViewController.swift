@@ -35,9 +35,14 @@ class EWPersonChatViewController: RCConversationViewController {
         super.pluginBoardView(pluginBoardView, clickedItemWithTag: tag)
         if tag == 4{
             let str = "telprompt://" + ("18511111111")
-            UIApplication.shared.open(URL(string: str)!, options: ["":""], completionHandler: nil)
+            UIApplication.shared.open(URL(string: str)!, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary(["":""]), completionHandler: nil)
         }
     }
 
 
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

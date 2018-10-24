@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         ///在官网上申请的App Key. 同时获取的App Secret我们并不需要,是后台需要的.
         RCIM.shared().initWithAppKey("y745wfm8yjzbv")
         ///是否将用户信息和群组信息在本地持久化存储
