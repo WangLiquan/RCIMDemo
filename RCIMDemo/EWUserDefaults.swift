@@ -13,14 +13,11 @@ let GROUPMESSAGEKEY = "groupMessageNum"
 let PERSONMESSAGEKEY = "personMessageNum"
 
 ///将消息数量存储进userDefaults,获取message存储字典.如果没有则新建
-func getMessageDic(_ key: String) -> Dictionary<String,Int>{
-    var dic = UserDefaults.standard.value(forKey: key)
-    if dic == nil {
-        dic = Dictionary<String,Int>()
+func getMessageDic(_ key: String) -> [String: Int] {
+    guard let dic = UserDefaults.standard.value(forKey: key) as? [String: Int] else {
+        let dic = [String: Int]()
         UserDefaults.standard.setValue(dic, forKey: key)
+        return dic
     }
-    return dic as! Dictionary<String, Int>
+    return dic
 }
-
-
-

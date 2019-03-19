@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(tableView)
-        
+
 //        tableView.separatorStyle = .none
         tableView.isOpaque = false
         tableView.dataSource = self
@@ -28,15 +28,15 @@ class ViewController: UIViewController {
         tableView.estimatedSectionHeaderHeight = 0
         tableView.estimatedSectionFooterHeight = 0
 
-        tableView.showsHorizontalScrollIndicator=true;
-        tableView.showsVerticalScrollIndicator=false;
+        tableView.showsHorizontalScrollIndicator=true
+        tableView.showsVerticalScrollIndicator=false
         tableView.register(EWChatListTableViewCell.self, forCellReuseIdentifier: EWChatListTableViewCell.identifier)
 
         ///添加通知,获取消息时刷新TableView上的badge
         NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name:   Notification.Name(rawValue: "onRCIMReceive"), object: nil)
     }
     /// 融云通知获取信息时调用刷新群组信息数
-    @objc private func reloadData(){
+    @objc private func reloadData() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
@@ -47,7 +47,7 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController:UITableViewDelegate,UITableViewDataSource{
+extension ViewController:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
@@ -77,4 +77,3 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
         self.reloadData()
     }
 }
-

@@ -70,9 +70,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
 }
-//MARK: - 融云获取信息delegate
+// MARK: - 融云获取信息delegate
 extension AppDelegate: RCIMReceiveMessageDelegate {
 
     /// 收到信息时的回调方法
@@ -120,4 +119,3 @@ extension AppDelegate: RCIMReceiveMessageDelegate {
         NotificationCenter.default.post(name: Notification.Name(rawValue: "onRCIMReceive"), object: nil)
     }
 }
-

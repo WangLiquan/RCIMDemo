@@ -10,9 +10,9 @@ import Foundation
 
 let RCIMDataSource = EWRCIMuserInfoDataSource.shared
 ///实现三个代理方法,选择自己需要的使用
-class EWRCIMuserInfoDataSource: NSObject,RCIMUserInfoDataSource,RCIMGroupInfoDataSource,RCIMGroupUserInfoDataSource{
+class EWRCIMuserInfoDataSource: NSObject,RCIMUserInfoDataSource,RCIMGroupInfoDataSource,RCIMGroupUserInfoDataSource {
     static let shared = EWRCIMuserInfoDataSource()
-    
+
     func getUserInfo(withUserId userId: String!, inGroup groupId: String!, completion: ((RCUserInfo?) -> Void)!) {
         guard userId != nil else { return }
         guard groupId != nil else { return }
@@ -37,6 +37,5 @@ class EWRCIMuserInfoDataSource: NSObject,RCIMUserInfoDataSource,RCIMGroupInfoDat
             */
         }
     }
-
 
 }
